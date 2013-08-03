@@ -1,0 +1,241 @@
+<!DOCTYPE html> 
+<html dir="ltr" lang="en-US"> 
+
+<head> 
+<!-- SigmaWeb By Sanketh Katta --> 
+	<meta charset="utf-8" /> 
+	<title>{{ info['team'] }}</title> 
+
+	<!-- Stylesheets --> 
+	<link rel="stylesheet" type="text/css" href="bootstrap.min.css"/> 
+	<link rel="stylesheet" type="text/css" href="sigmaweb.css"/> 
+   <link rel="stylesheet/less" href="variables.less" />
+
+   
+	<script type="text/javascript" src="d3.v2.min.js"></script> 
+	<script type="text/javascript" src="nv.d3.min.js"></script> 
+    <script type="text/javascript" src="lineWithFocusChart.js"></script>
+    <script type="text/javascript" src="jquery.min.js"></script>
+    <script type="text/javascript" src="bootstrap.min.js"></script>
+</head> 
+
+<!--
+
+            <a id="view_param" href="#myModal" role="button" class="btn" data-toggle="modal">View Help</a>
+
+		        <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h3>Need Help?</h3>
+                    </div>
+                     <div class="modal-body">
+                        <form action="simulate" method="post">
+                        <table id="run_parameters" class="table table-striped">
+                            <tbody>
+							<h5>
+                            HELP IS SUPPOSED TO BE HERE!!!!!!!!!!!!!!! 
+							</h5>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="modal-footer">
+                        
+                        </form>
+                        <a href=# class="btn" data-dismiss="modal">Close</a>
+                    </div>
+                </div>
+				
+-->
+<body> 
+<div class="container">    
+<header class="jumbotron subhead" id="overview">
+  <div class="row">
+    <div class="span6">
+      <h1>SimuCar</h1>
+      <p class="lead">A better way to plan your business.</p>
+    </div>
+  </div>
+  <div class="subnav">
+    <ul class="nav nav-pills">
+      <li><a id="view_param" href="#myModal1" role="button" class="btn" data-toggle="modal">History</a></li>
+	  		    <div id="myModal1" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h3>Our History</h3>
+                    </div>
+                     <div class="modal-body">
+                        <form action="simulate" method="post">
+                        <table id="run_parameters" class="table table-striped" background="ls.jpg">
+                            <tbody>
+							<h5><br><br>
+                            SimuCar was born in UC Berkeley campus on December 1st, 2012!  Its parents are five creative and energetic Berkeley undergrads.  <br><br>
+                            Special thanks to the IEOR 131 (U)GSIs, who helped a lot with laboring of SimuCar! 
+
+							</h5>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="modal-footer">
+                        
+                        </form>
+                        <a href=# class="btn" data-dismiss="modal">Close</a>
+                    </div>
+                </div>
+      <li><a id="view_param" href="#myModal2" role="button" class="btn" data-toggle="modal">Advantages</a></li>
+	            <div id="myModal2" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h3>Why SimuCar?</h3>
+                    </div>
+                     <div class="modal-body">
+                        <form action="simulate" method="post">
+                        <table id="run_parameters" class="table table-striped">
+                            <tbody>
+							<h5>
+                            Provide valuable analysis to infinite possibilities of scenarios determined by users.
+							Offer insights on a number of operational measurements and financial results that enables well-informed decision making.
+                            Sleek web interface, and handy functions such as graph zoom-in and data export, making a best user experience. 
+							</h5>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="modal-footer">
+                        
+                        </form>
+                        <a href=# class="btn" data-dismiss="modal">Close</a>
+                    </div>
+                </div>
+      <li><a id="view_param" href="#myModal3" role="button" class="btn" data-toggle="modal">Contacts</a></li>
+	            <div id="myModal3" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h3>Contact Information</h3>
+                    </div>
+                     <div class="modal-body">
+                        <form action="simulate" method="post">
+                        <table id="run_parameters" class="table table-striped">
+                            <tbody>
+							<h4>
+                            SimuCar Team:<br>
+							</h4>
+							<h5>
+							Moises Coronado: moises41@berkeley.edu <br>
+							Christopher Tong: chrisktong@berkeley.edu<br>
+                            Suyang Wang: su_yang_wang@berkeley.edu<br>
+                            Derrick Yen: yen.derrick@berkeley.edu<br>
+                            Mengyi Zhang: ashleyzmy@berkeley.edu<br>
+<br><br>
+                            Industrial Engineering and Operations Research Department<br>
+                            University of California, Berkeley<br><br>
+
+							
+							</h5>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="modal-footer">
+                        
+                        </form>
+                        <a href=# class="btn" data-dismiss="modal">Close</a>
+                    </div>
+                </div>
+      <li><a id="view_param" href="#myModal4" role="button" class="btn" data-toggle="modal">Assumptions</a></li>
+	            <div id="myModal4" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h3>Assumptions</h3>
+                        <p>SimuCar models everything in the unit of day, which is the usual time frame for most car rental companies according to research and it is easy to model.  SimuCar also allows fractional days, say 0.5 day means 12 hours. This feature empowers the model to incorporate hourly car rental as well.  
+
+                        </p>
+                        <p>SimuCar is designed to simulate the operation of a single car rental store, which can be part of a larger rental enterprise. Therefore we assume that the car return rate is 100%, meaning cars will be returned to where they were. However, we believe that with some adjustments to the model, a car rental network comprising multiple stores can be modeled.  Although in reality, some cars may unfortunately be destroyed in accidents and count as a total loss, this likelihood is negligible and thus will not effectively impact data.</p>
+                        <p>For the sake of simplicity, we assume that all cars rented can be categorized into four types.  We suggest the categories as follows: small, medium, large, and convertible.  Doing so facilitates data management in the sense that less variables are required to be traced. Moreover, the characteristics among the four car types already provides sufficient variation for modeling a single car rental store. 
+</p>
+                        <p>We assume that no new cars can be purchased during each simulation run, meaning that the run time of the simulation must be less than the average lifetime of all rental cars in stock.  This is done to circumvent limitations of the DES software.
+</p>
+                        <p>Customers are impartial towards which specific model they are given as long as it belongs to a certain category (small, medium, large, or convertible), allowing us to effectively model all cars within the same category as identical while satisfying demands of all types within the category.  This allows us to neglect specific requests by the customers, such as color of the car, material of interior, etc., therefore reduces the complexity of our model. 
+</p>
+                        <p>Customers are categorized into the following types: walk-ins and reservations We grant priority to customers who have placed a reservation because the majority of car renters reserve a car one day in advance. There will be no queue for walk-ins because it is unlikely that a customer will wait at the rental office until a car is available, reflecting the reality of the situation and increasing the validity of our model.
+</p>
+                        <p>Customers do not cancel their car rental reservations for any reason. Reservations must be placed at least one day in advance.We hold a car of the customer's chosen type for some number of days specified by users in advance of the wanted day.These assumptions may overestimate the actual demand for rentals and may cause us to deny service to walk-in customers. However, without this assumption, more unnecessary variability will be introduced into our model rendering meaningless data.
+</p>
+                        <p>Each car will fail with some probability P for a time determined by a uniform distribution.
+</p>            
+                       
+                    </div>
+                     <div class="modal-body">
+                        <form action="simulate" method="post">
+                        <table id="run_parameters" class="table table-striped">
+                            <tbody>
+							<h5>
+
+                             
+                             
+                             
+                             
+                             
+                             
+                             
+                             
+                             
+                             
+                             
+							</h5>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="modal-footer">
+                        
+                        </form>
+                        <a href=# class="btn" data-dismiss="modal">Close</a>
+                    </div>
+                </div>
+    </ul>
+  </div>
+</header>
+
+        <div class="row">
+            <div class="span8">
+              <div class="container"> 
+               <section>
+                <h2>Welcome to {{ info['team'] }}!</h2>
+                <p>{{!info['description']}}</p>
+                <p>By {{ info['members'] }}</p>
+                <p> <a href="/login" class="btn btn-primary btn-large">Let's Get Started</a> </p>
+               </section> 
+               </div>
+               <div class="container">
+                <section>
+                  <h3> Model Random Events</h3>
+                  <!--<p>* model things</p>
+                  <p>* service levels</p>
+                  <p>* model more things</p>-->
+                  <p>* Flexibility </p>
+                  <p>* Comprehensiveness</p>
+                  <p>* Visibility</p>
+                  <p>* Portability</p>
+                </section>
+               </div>
+            </div>
+           
+            
+            <div class="span4">
+               <address>
+                  <strong>SimuCar Inc.</strong><br>
+                     4141 Etcheverry Hall<br>
+					 University of California, Berkeley<br>
+                     Berkeley, CA 94720<br>
+                     <abbr title="Phone">Phone:</abbr> (510) 123-4567
+               </address>
+               <address>
+               <strong>Full Name</strong><br>
+               <a href="mailto:#">first.last@gmail.com</a>
+               </address>
+            </div>           
+        </div>
+
+     
+     
+   </div>
+</body> 
+</html> 
+ 

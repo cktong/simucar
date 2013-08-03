@@ -1,0 +1,85 @@
+<!DOCTYPE html> 
+<html dir="ltr" lang="en-US"> 
+<head> 
+<!-- SigmaWeb By Sanketh Katta --> 
+	<meta charset="utf-8" /> 
+	<title>{{ info['team'] }}</title> 
+	
+
+
+	<!-- Stylesheets --> 
+	<link rel="stylesheet" type="text/css" href="bootstrap.min.css"/> 
+	<link rel="stylesheet" type="text/css" href="sigmaweb.css"/> 
+   <link rel="stylesheet/less" href="variables.less" />
+
+
+    <script type="text/javascript" src="core.js"></script>
+    <script type="text/javascript" src="betajava.js"></script>
+    <script type="text/javascript" src="betafull.js"></script>
+    
+<head>
+<body>
+
+    % include navbar data={"info": info, "__simulate": "", "__results": "", "__mybeta":"active"}
+
+<body class="ancillary" onload="initialize()">
+
+
+<div id="wrapper-header">
+<div id="header">
+<div id="wrapper-header2">
+<div id="wrapper-header3">
+<h1>
+<center>Beta Distribution Interactive Calculator</center>
+</h1>
+</div>
+</div>
+</div>
+</div>
+<div style="text-align: justify;" id="content">
+<center>
+
+<div class="applet">
+
+<table class="applet">
+	<tr>
+		<td class="tool">
+			<label id="aLabel" for="aInput"></label>
+			<input id="aInput" type="range" class="parameter" tabindex="2" onchange="setDist();" />
+		</td>
+		<td class="tool">
+			<label id="bLabel" for="bInput"></label>
+			<input id="bInput" type="range" class="parameter" tabindex="3" onchange="setDist();" />
+		</td>	
+		<td class="tool">
+			<select id="graphSelect" tabindex="1" title="Select view" onchange="distGraph.setGraphType(value);">
+				<option value="pdf">PDF</option>
+				<option value="cdf">CDF</option>
+			</select>
+		</td>
+	</tr>
+	<tr>
+		<td class="device" colspan="3"><canvas id="distCanvas" title="Distribution graph" width="700" height="300">Distribution graph</canvas></td>
+	</tr>
+	<tr>
+		<td class="tool">
+			<label id="xLabel" for="xInput"></label>
+			<input id="xInput" type="text" class="parameter" tabindex="4" onchange="setValue();" />
+		</td>
+		<td class="tool">
+			<label id="pLabel" for="pInput"></label>
+			<input id="pInput" type="text" class="parameter" tabindex="5" onchange="setProb()" />
+		</td>
+		<td class="tool"> </td>
+	</tr>
+</table>
+
+<h4 class="ancillary">SomeTitle</h4>
+
+<p>From http://www.socr.ucla.edu/distributome/test/JavaScript/calc/BetaCalculator.html</p>
+</div>
+</center>
+
+
+</body>
+</html>

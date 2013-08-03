@@ -1,0 +1,89 @@
+<!DOCTYPE html> 
+<html dir="ltr" lang="en-US"> 
+<head> 
+<!-- SigmaWeb By Sanketh Katta --> 
+	<meta charset="utf-8" /> 
+	<title>{{ info['team'] }}</title> 
+
+	<!-- Stylesheets --> 
+	<link rel="stylesheet" type="text/css" href="bootstrap.min.css"/> 
+	<link rel="stylesheet" type="text/css" href="sigmaweb.css"/> 
+	<link rel="stylesheet" type="text/css" href="nv.d3.css"/> 
+   <link rel="stylesheet/less" href="variables.less" />
+
+	<!-- JavaScripts --> 
+	<script type="text/javascript" src="d3.v2.min.js"></script> 
+	<script type="text/javascript" src="nv.d3.min.js"></script> 
+    <script type="text/javascript" src="lineWithFocusChart.js"></script>
+    <script type="text/javascript" src="jquery.min.js"></script>
+    <script type="text/javascript" src="bootstrap.min.js"></script>
+    <script type="text/javascript">
+        var bind = {{!bind}};
+    </script>
+</head> 
+
+<body> 
+    % include navbar data={"info": info, "__simulate": "", "__results": "active","__mybeta":""}
+    
+    <div class="container">
+        <div class="row">
+            <div class="span12">
+                <div class="page-header">
+                    <h1>Results. <small>analyze your output<small> 
+                    <a id="view_param" href="#myModal" role="button" class="btn" data-toggle="modal">View and Edit Run Parameters</a>
+                    <a id="view_param" class="btn" href={{xlsfile_name}} onclick="_gaq.push(['_trackEvent', 'Getting started', 'Download', 'Download source']);">Download</a> 
+                    </h1>         
+                </div>
+                
+                <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h3>Run Parameters</h3>
+                    </div>
+                     <div class="modal-body">
+                        <form action="simulate" method="post">
+                        <table id="run_parameters" class="table table-striped">
+                            <tbody>
+                            <div class="control-group">
+                            <tr><td><span><label class="control-label">{{ settings_params['runtime']['display']}}:</label></span></td>
+                            <td><input type="text" name="{{ settings_params['runtime']['name'] }}" value="{{ settings_params['runtime']['default'] }}"></td>
+                            % for param in settings_params['parameters']:
+                            <tr><td><span><label class="control-label">{{ param['display']}}:</label></span></td>
+                              <div class="controls">
+                                 <td><input type="text" name="{{ param['name'] }}" value="{{ parameters[param['name']] }}"></td></tr>
+                              </div>
+                            % end
+                            </div>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="modal-footer">
+                        <input class="btn btn-primary" type="submit" value="Apply">
+                        </form>
+                        <a href=# class="btn" data-dismiss="modal">Close</a>
+                    </div>
+                </div>
+                
+                <div class="well">
+                    <h4>Total Profit: {{totprofit}}</h4>
+                    <h4>Total Service Level: {{totservice}}</h4>
+                    
+                </div>
+                
+                <div id="charts">
+                
+                <h3>Service Levels:</h3>
+                <svg id="chartBar" style="height:500px"></svg>
+                
+                % for i in range(len(bind['graphs'])):
+                    <h3>{{ bind['graphs'][i]['graph_name'] }}</h3>
+                    <svg id="chart{{i}}" style="height:500px"></svg>
+                % end
+                </div>
+                <script type="text/javascript" src="sigmaweb.js"></script>
+            </div>
+        </div>
+   </div>
+</body> 
+</html> 
+ 

@@ -1,0 +1,53 @@
+      <a id="view_param" href="#testbutton" role="button" class="btn" data-toggle="modal">beta</a>
+    
+      <div id="testbutton" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+         <div class="modal-header">
+               <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+               <h3>Beta Distribution</h3>
+         </div>
+         <div class="modal-body">
+            <body class="ancillary" onload="initialize()">
+            <div style="text-align: justify;" id="content">
+            <div id="applet">
+            <span>
+              <table>
+               <tr>
+                  <td class="tool">
+                  <label id="aLabel" for="aInput"></label>
+                  <input id="aInput" class="input-small" type="range" class="parameter" tabindex="2" onchange="setDist();" />
+                  </td>
+                  <td class="tool">
+                     <label id="bLabel" for="bInput"></label>
+                     <input id="bInput" class="input-small" type="range" class="parameter" tabindex="3" onchange="setDist();" />
+                  </td>	
+                  <td class="tool">
+                     <select id="graphSelect" tabindex="1" title="Select view" onchange="distGraph.setGraphType(value);">
+                        <option value="pdf">PDF</option>
+                        <option value="cdf">CDF</option>
+                     </select>
+                  </td>
+               </tr>
+               
+               <tr>
+                  <td class="device" colspan="3"><canvas id="distCanvas" title="Distribution graph" width="400" height="300">Distribution graph</canvas></td>
+               </tr>
+               
+               <tr>
+               <td class="tool">
+                  <label id="xLabel" for="xInput"></label>
+                  <input id="xInput" class="input-small" type="text" class="parameter" tabindex="4" onchange="setValue();" />
+               </td>
+               <td class="tool">
+                  <label id="pLabel" for="pInput"></label>
+                  <input id="pInput" class="input-small" type="text" class="parameter" tabindex="5" onchange="setProb()" />
+               </td>
+               <td class="tool"> </td>
+               </tr>
+              </table>
+              </span>
+            </div>
+            
+            </body>
+            </div>
+         </div>
+      </div>
